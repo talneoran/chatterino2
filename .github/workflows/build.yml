@@ -195,7 +195,7 @@ jobs:
         run: |
             mkdir build
             cd build
-            cmake -DCMAKE_BUILD_TYPE=Release -DUSE_PACKAGE_MANAGER=ON ..
+            cmake -DCMAKE_BUILD_TYPE=Release ..
             make -j8
         shell: bash
 
