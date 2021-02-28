@@ -1,7 +1,8 @@
 #!/bin/sh
 
-if [ -d bin/chatterino.app ]; then
-    cd bin || exit
+if [ -d bin/chatterino.app ] && [ ! -d chatterino.app ]; then
+    >&2 echo "Moving bin/chatterino.app down one directory"
+    mv bin/chatterino.app chatterino.app
 fi
 
 echo "Running MACDEPLOYQT"
