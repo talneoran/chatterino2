@@ -1,15 +1,11 @@
 #!/bin/sh
 
-app_folder="chatterino.app"
-
 if [ -d bin/chatterino.app ]; then
-    app_folder="bin/chatterino.app"
+    cd bin || exit
 fi
 
->&2 echo "Using '$app_folder' as the app folder"
-
 echo "Running MACDEPLOYQT"
-/usr/local/opt/qt/bin/macdeployqt "$app_folder"
+/usr/local/opt/qt/bin/macdeployqt chatterino.app
 echo "Creating python3 virtual environment"
 python3 -m venv venv
 echo "Entering python3 virtual environment"
