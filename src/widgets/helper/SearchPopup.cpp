@@ -64,6 +64,9 @@ SearchPopup::SearchPopup(QWidget *parent)
         this->searchInput_->setFocus();
         this->searchInput_->selectAll();
     });
+
+    this->setWindowFlags(this->windowFlags() &
+                         ~Qt::WindowContextHelpButtonHint);
 }
 
 void SearchPopup::setChannelFilters(FilterSetPtr filters)
